@@ -7,7 +7,10 @@ import Activity from "./pages/Activity";
 import Town from "./pages/Town";
 import Navbar from "./pages/Navbar";
 import Footer from "./pages/Footer";
+import ProductList from "./pages/product/Productlist";
+import ProductDetail from "./pages/product/Productitem";
 import "./index.css";
+import Layout from "./layout/layout";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,7 +20,7 @@ import {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
+    <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
       <Route path="about" element={<About />}>
         <Route path="me" element={<h1>Sono io!</h1>} />
@@ -26,6 +29,9 @@ const router = createBrowserRouter(
       <Route path="activity/:id" element={<Activity />}>
         <Route path="/activity/:id/costo" element={<h1>600€</h1>} />
       </Route>
+      <Route path="/products" element={<ProductList />} />
+      {/* <Route path="/products/:id" element={<ProductDetail />} /> */}
+      <Route path="/products/:name" element={<ProductDetail />} />
       <Route path="/town/:id" element={<Town />}>
         <Route
           path="/town/:id/roma"
@@ -61,8 +67,8 @@ const root = createRoot(domNode);
 root.render(
   // ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar />
+    {/* <Navbar /> */}
     <RouterProvider router={router} />
-    <Footer />
+    {/* <Footer /> */}
   </React.StrictMode>
 );

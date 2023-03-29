@@ -21,6 +21,9 @@ export default function Home() {
         <li>
           <Link to="/town/id:/elcotillo">ELCOTILLO</Link>
         </li>
+        <li>
+          <Link to="/products">PRODUCTS</Link>
+        </li>
       </ul>
     </div>
   );
