@@ -22,7 +22,7 @@ export default function Home() {
           <Link to="/town/id:/elcotillo">ELCOTILLO</Link>
         </li>
         <li>
-          <Link to="/products">PRODUCTS</Link>
+          <Link to="/products">elenco degli hotels</Link>
         </li>
       </ul>
     </div>

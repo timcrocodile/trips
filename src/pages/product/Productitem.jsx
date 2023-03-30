@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+7;
+import styles from "./index.module.scss";
 
 const ProductDetail = () => {
   //   const [product, setProduct] = useState({});
@@ -30,7 +32,7 @@ const ProductDetail = () => {
   }, [name]);
 
   return (
-    <div>
+    <div className={styles.item}>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -42,7 +44,10 @@ const ProductDetail = () => {
       {product ? (
         <>
           <h1>{product.name || "Nome non disponibile"}</h1>
-          <p>{product.url || "Descrizione non disponibile"}</p>
+          {/* <p>{product.url || "Descrizione non disponibile"}</p> */}
+          <a href={product.url}>
+            {product.url || "Descrizione non disponibile"}
+          </a>
         </>
       ) : (
         <p>Caricamento...</p>

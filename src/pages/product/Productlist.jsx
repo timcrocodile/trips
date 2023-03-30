@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import styles from "./index.module.scss";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -19,8 +20,8 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className={styles.productlist}>
+      <ul className={styles.links}>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -28,8 +29,8 @@ const ProductList = () => {
           <Link to="/about">about</Link>
         </li>
       </ul>
-      <h1>Elenco prodotti</h1>
-      <ul>
+      <h1>Hotels in Irlanda</h1>
+      <ul className={styles.names}>
         {products.map((product, index) => (
           //   <li key={product.id}>
           <li key={index}>

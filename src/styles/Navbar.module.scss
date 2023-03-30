@@ -1,4 +1,44 @@
 .Navbar {
   position: absolute;
   top: 0px;
+  height: 110px;
+  width: 100%;
+  border: 2px solid rgb(241, 75, 75);
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 1px;
+  background-color: antiquewhite;
+  padding: 5px;
+
+  .listofcities {
+    display: flex;
+    flex-wrap: no wrap;
+    padding: 0;
+    margin: 0;
+    animation: scrollCities 30s linear infinite;
+    white-space: nowrap;
+    width: 180%;
+    overflow: hidden;
+
+    & > p {
+      padding: 0 10px;
+      width: 10%;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes scrollCities {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-60%);
+    }
+  }
+  button {
+    cursor: pointer;
+  }
+  .containerlistofcities {
+    overflow-x: hidden;
+  }
 }

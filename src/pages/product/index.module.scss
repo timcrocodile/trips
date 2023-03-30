@@ -1,0 +1,18 @@
+.productlist {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+
+  .list {
+  }
+  .names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+  }
+}
+
+.item {
+  margin-top: 120px;
+}
