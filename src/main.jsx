@@ -39,8 +39,8 @@ const router = createBrowserRouter(
             <img
               src="https://www.turismoroma.it/sites/default/files/Roma%20in%20breve.jpg"
               alt="Girl in a jacket"
-              width="500"
-              height="600"
+              width="400"
+              height="300"
             ></img>
           }
         />

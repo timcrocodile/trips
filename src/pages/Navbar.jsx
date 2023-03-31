@@ -1,10 +1,33 @@
 import styles from "../styles/Navbar.module.scss";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [city, setCity] = useState("");
   const [hotel, setHotel] = useState(null);
+
+  const navigate = useNavigate();
+
+  const [inputTimeValue, setInputTimeValue] = useState("");
+
+  // const onHandleClick = async () => {
+  //   navigate(
+  //     `/products?city=${encodeURIComponent(city)}&time=${inputTimeValue}`
+  //   );
+  // };
+  const onHandleClick = async () => {
+    if (hotel) {
+      navigate(
+        `/products/${encodeURIComponent(hotel.name)}?time=${inputTimeValue}`
+      );
+    } else {
+      console.log("Hotel not found");
+    }
+  };
+
+  const onHandleInputTime = (e) => {
+    setInputTimeValue(() => e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,15 +93,30 @@ const Navbar = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Cerca hotel per città"
+          placeholder="dove vuoi andare ?"
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button type="submit">Cerca</button>
+        <button type="submit">
+          clicca qui per verificare che ci sono strutture albergiere diponibili
+          nella città
+        </button>
+        <br />
         <button type="button" onClick={handleMyLocationClick}>
-          guardami su google maps
+          se hi trovato una struttura albergiera puoi guardarla su google maps
         </button>
       </form>
+      <input
+        value={inputTimeValue}
+        onChange={onHandleInputTime}
+        type="time"
+        name=""
+        id=""
+      />{" "}
+      <button onClick={onHandleClick}>
+        {" "}
+        clicca qui controllare se per quell'orario ci sono posti disponibili !
+      </button>
       {hotel && (
         <div>
           <Link to={`/products/${encodeURIComponent(hotel.name)}`}>
@@ -89,7 +127,7 @@ const Navbar = () => {
           </p>
         </div>
       )}
-      <div className={styles.containrlistofcities}>
+      <div className={styles.containerlistofcities}>
         <div className={styles.listofcities}>
           {cities.map((city) => (
             <p key={city} onClick={handleCityClick}>

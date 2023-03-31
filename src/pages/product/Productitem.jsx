@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-7;
+
 import styles from "./index.module.scss";
 
 const ProductDetail = () => {
@@ -9,6 +9,8 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   //   const { id } = useParams();
   const { name } = useParams();
+  const [searchParams] = useSearchParams();
+  // const time = searchParams.get("time");
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -40,7 +42,14 @@ const ProductDetail = () => {
         <li>
           <Link to="/products">products</Link>
         </li>
-      </ul>
+      </ul>{" "}
+      {searchParams.get("time") && (
+        <h3>
+          la sua prenotazione per le {searchParams.get("time")} è stata
+          confermata
+        </h3>
+      )}
+      {/* {time && <p>orario : {time}</p>} */}
       {product ? (
         <>
           <h1>{product.name || "Nome non disponibile"}</h1>
