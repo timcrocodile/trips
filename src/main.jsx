@@ -10,7 +10,7 @@ import Footer from "./pages/Footer";
 import ProductList from "./pages/product/Productlist";
 import ProductDetail from "./pages/product/Productitem";
 import "./index.css";
-import Layout from "./layout/layout";
+import Layout from "./layout/Layout";
 import {
   createBrowserRouter,
   RouterProvider,

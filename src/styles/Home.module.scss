@@ -1,7 +1,8 @@
 .Home {
-  margin-top: 150px;
+  padding: 125px;
+  margin-top: 122px;
   background-image: url("https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2021/05/USE_Dunluce-Castle-along-northern-coast-of-County-Antrim-Northern-Ireland_Credit_Alamy_GDMKET.jpg");
-  height: 500px;
+  height: 300px;
   color: white;
   //   padding: 20px;
   ul {
@@ -9,5 +10,10 @@
       background-color: white;
       width: 150px;
     }
+  }
+  p {
+    width: fit-content;
+    padding: 2px;
+    background-color: antiquewhite;
   }
 }

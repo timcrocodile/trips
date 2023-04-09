@@ -103,7 +103,7 @@ const Navbar = () => {
         </button>
         <br />
         <button type="button" onClick={handleMyLocationClick}>
-          se hi trovato una struttura albergiera puoi guardarla su google maps
+          clicca qui per vedere dove si trova la struttura alberghiera
         </button>
       </form>
       <input

@@ -1,7 +1,7 @@
 .Navbar {
   position: absolute;
   top: 0px;
-  height: 110px;
+  height: 140px;
   width: 100%;
   border: 2px solid rgb(241, 75, 75);
   border-radius: 12px;
@@ -13,6 +13,8 @@
   .listofcities {
     display: flex;
     flex-wrap: no wrap;
+    color: black;
+
     padding: 0;
     margin: 0;
     animation: scrollCities 30s linear infinite;
